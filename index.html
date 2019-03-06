@@ -1,0 +1,130 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Johan Dahl</title>
+	<link rel="stylesheet" href="johan/style.css" type="text/css" />
+	<script src="use.fontawesome.com/196102e831.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+		function lengthPassed(t) { // Hur många procent av sträckan bör vi ha färdats vid T=t?
+			if (t < 0.5) {
+				return 4 * t * t * t
+			} else {
+				return (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+			}
+		}
+		function scrollTo(element, from, to, totalDuration, t) {
+		    if (t >= totalDuration) return;
+			let totalWay = to - from
+			let passedWay = totalWay * lengthPassed(t / totalDuration)
+			element.scrollTop = from + passedWay
+		    setTimeout(function() {
+		        if (element.scrollTop >= to) return;
+		        scrollTo(element, from, to, totalDuration, t + 10);
+		    }, 10);
+		}
+		document.addEventListener("DOMContentLoaded", function() {
+			document.getElementById('cv-link').addEventListener('click', function () {
+				scrollTo(document.body, document.body.scrollTop, document.getElementById('cv').offsetTop + 10, 200, 0)
+				return false
+			})
+			document.addEventListener('scroll', function () {
+				console.log('Scroll')
+				if (document.body.scrollTop > 10) {
+					document.getElementById('language').className = 'language english scrolled'
+				} else {
+					document.getElementById('language').className = 'language english'
+				}
+				return false
+			})
+		}, false);
+	</script>
+</head>
+<body>
+	<div class="language english" id="language">
+		<a href="johan/en.html"><span></span></a>
+	</div>
+	<div class="contact">
+		<div class="middle">
+			<h1>Johan Dahl</h1>
+			<p>Studerar civilingenjörsprogrammet i Industriell Ekonomi vid Kungliga Tekniska Högskolan.</p>
+			<ul>
+				<li><i class="fa fa-phone"></i> +46(0)70-744 74 13</li>
+				<li><i class="fa fa-envelope"></i> johan (at) johadahl.com</li>
+				<li><i class="fa fa-github"></i> <a href="https://github.com/johadahl">johadahl</a></li>
+				<li><i class="fa fa-globe"></i> <a href="index.html">johadahl.com</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="down">
+		<a href="#cv" id="cv-link" onclick="return false;"><i class="fa fa-chevron-down"></i></a>
+	</div>
+	<div id="cv"></div>
+	<div class="cv">
+		<h1>Johan <span class="print-only">Dahl</span></h1>
+		<span class="sub-cv">CV</span>
+		<ul class="info print-only">
+			<li><i class="fa fa-phone"></i> +46 (0)70-744 74 13 <i class="fa fa-envelope"></i> <span>johan</span>@<span>johadahl.com</span></li>
+			<li></li>
+			<li><i class="fa fa-home"></i> Banérgatan 83, 115 53 Stockholm </li>
+			<li><i class="fa fa-globe"></i> <a href="index.html">johadahl.com</a> <i class="fa fa-github"></i> <a href="https://github.com/johadahl">johadahl</a></li>
+		</ul>
+		<h2><i class="fa fa-graduation-cap"></i> Utbildning</h2>
+		<ul>
+			<li>
+				<span class="time">Augusti 2014 - (Juni 2019)</span>
+				<h3>Civilingenjörsutbildning i Industriell Ekonomi </span></h3>
+				<span class="location">Kungliga Tekniska Högskolan</span>
+				<span class="description">
+					Civil Ingenjör i Industriell Ekonomi med teknisk inriktning mot datalogi. Mer specifikt inriktad mot Maskininlärning och Artificiell Intelligens.
+				</span>
+			</li>
+			<li>
+				<span class="time">Januari 2018 - Maj 2018</span>
+				<h3>Utbytesstudier i Mumbai, Indien</h3>
+				<span class="location">IIT - Bombay</span>
+				<span class="description">Utbytesstudier under en termin vid Indian Institute of Technology - Bombay. Kurser främst hos SJM School of Management men även Center for Entrepreneurship och Computer Science Department.</span>
+			</li>
+			<li>
+				<span class="time">Januari 2017 - Maj 2017</span>
+				<h3>Kandidatexamensarbete - Databasutveckling på Kuba</h3>
+				<span class="location">Polytechnic José Antonio Echeverría (CUJAE)</span>
+				<span class="description">Stöttade ett forskningsprojekt lett av Dr Marta Abrau vid avdelningen för Industriell Ekonomi vid CUJAE genom att strukturera en databas innehållandes information om ICT lösningar som används inom Kubanska företag. Projektet innebar 3 veckors vistelse vid CUJAE.</span>
+			</li>
+			<li>
+				<span class="time">Augusti 2012 - Juni 2013</span>
+				<h3>Samhällsplanering - Urban och Regional Utveckling</h3>
+				<span class="location">Lunds Universitet</span>
+				<span class="description">Fullföljde första av en tre år lång kandidatexamensutbildning inom samhällsplanering.</span>
+			</li>
+		</ul>
+		<h2><i class="fa fa-trophy"></i> Övriga meriter</h2>
+		<ul>
+			<li>
+				<span class="time">Maj 2018 - (Januari 2018)</span>
+				<h3>Projektledare för TEDxKTH</h3>
+				<span class="location">Kungliga Tekniska Högskolan</span>
+				<span class="description">Ansvarar för genomförandet av TEDxKTH under läsåret 2018/2019.</span>
+			</li>
+			<li>
+				<span class="time">Juni 2013 - Pågående</span>
+				<h3>Reservofficer tillika Eldledningsgruppchef</h3>
+				<span class="location">Försvarsmakten</span>
+				<span class="description">Genomförde GMU + BFU vid 2.Psk, I19, Boden. Har sedan dess varit tidsvisanställd vid ett mekaniserat pansarskyttekompani. Under sommaren 2016 och 2017 vidareutbildade jag mig till Reservofficer vid Militärhögskolan i Halmstad.</span>
+			</li>
+			<li>
+				<span class="time">September 2014 - September 2015</span>
+				<h3>Kassör tillika Styrelsemedlem</h3>
+				<span class="location">Sektionen för Öppen Ingång, KTH</span>
+				<span class="description">Utöver ansvar för löpande utgifter och upprättande av årsbokslut initierade och slutförde jag organisationsregistreringen hos Skatteverket.</span>
+			</li>
+		</ul>
+		<h2><i class="fa fa-lightbulb-o"></i> Kompetenser</h2>
+		<p>HTML, CSS, Javascript, SQL, Java, Python, Go</p>
+		<p>Har svenskt körkort.</p>
+		<h2><i class="fa fa-globe"></i> Språk</h2>
+		<p>Talar engelska och svenska flytande. Överlever i en spansktalande miljö.</p>
+		<p class="info">Referenser och betygsutdrag lämnas gärna vid förfrågan.</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Johan Dahl</title>
+	<link rel="stylesheet" href="../johan/en/../style.css" type="text/css" />
+	<script src="../use.fontawesome.com/196102e831.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript">
+		function lengthPassed(t) { // Hur många procent av sträckan bör vi ha färdats vid T=t?
+			if (t < 0.5) {
+				return 4 * t * t * t
+			} else {
+				return (t - 1) * (2 * t - 2) * (2 * t - 2) + 1
+			}
+		}
+		function scrollTo(element, from, to, totalDuration, t) {
+		    if (t >= totalDuration) return;
+			let totalWay = to - from
+			let passedWay = totalWay * lengthPassed(t / totalDuration)
+			element.scrollTop = from + passedWay
+		    setTimeout(function() {
+		        if (element.scrollTop >= to) return;
+		        scrollTo(element, from, to, totalDuration, t + 10);
+		    }, 10);
+		}
+		document.addEventListener("DOMContentLoaded", function() {
+			document.getElementById('cv-link').addEventListener('click', function () {
+				scrollTo(document.body, document.body.scrollTop, document.getElementById('cv').offsetTop + 10, 200, 0)
+				return false
+			})
+			document.addEventListener('scroll', function () {
+				console.log('Scroll')
+				if (document.body.scrollTop > 10) {
+					document.getElementById('language').className = 'language swedish scrolled'
+				} else {
+					document.getElementById('language').className = 'language swedish'
+				}
+				return false
+			})
+		}, false);
+	</script>
+</head>
+<body>
+	<div class="language swedish" id="language">
+		<a href="../index.html"><span></span></a>
+	</div>
+	<div class="contact">
+		<div class="middle">
+			<h1>Johan Dahl</h1>
+			<p>Studies MSc in Industrial Economics and Management at the Royal Institute of Technology</p>
+			<ul>
+				<li><i class="fa fa-phone"></i> +46 70-744 74 13</li>
+				<li><i class="fa fa-envelope"></i> johan@johadahl.com</li>
+				<li><i class="fa fa-github"></i> <a href="https://github.com/johadahl">johadahl</a></li>
+				<li><i class="fa fa-globe"></i> <a href="../index.html">johadahl.com</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="down">
+		<a href="#cv" id="cv-link" onclick="return false;"><i class="fa fa-chevron-down"></i></a>
+	</div>
+	<div id="cv"></div>
+	<div class="cv">
+		<h1>Johan <span class="print-only">Dahl</span></h1>
+		<span class="sub-cv">CV</span>
+		<ul class="info print-only">
+			<li><i class="fa fa-phone"></i> +46 (0)70-744 74 13 <i class="fa fa-envelope"></i> <span>johan</span>@<span>johadahl.com</span></li>
+			<li></li>
+			<li><i class="fa fa-home"></i> Banérgatan 83, 115 53 Stockholm </li>
+			<li><i class="fa fa-globe"></i> <a href="../index.html">johadahl.com</a> <i class="fa fa-github"></i> <a href="https://github.com/johadahl">johadahl</a></li>
+		</ul>
+		<h2><i class="fa fa-graduation-cap"></i> Education</h2>
+		<ul>
+			<li>
+				<span class="time">August 2014 - (June 2019)</span>
+				<h3>MSc in Industrial Economics and Management <span class="points">(300 credits)</span></h3>
+				<span class="location">Royal Institute of Technology</span>
+				<span class="description">
+					MSc in Industrial Economics and Management with a focus on computer science. Specifically Machine Learning and Artificial Intelligence. 
+				</span>
+			</li>
+			<li>
+				<span class="time">January 2018 - May 2018</span>
+				<h3>Exchange Studies in Mumbai, India</h3>
+				<span class="location">IIT - Bombay</span>
+				<span class="description">Exchange studies during one semester at Indian Institute of Technology - Bombay. Coursework primarily at SJM School of Management but also at the Center for Entrepreneurship and the Computer Science Department.</span>
+			</li>
+			<li>
+				<span class="time">Januari 2017 - Maj 2017</span>
+				<h3>Bachelor Thesis - Developing a database on Cuba</h3>
+				<span class="location">Polytechnic José Antonio Echeverría (CUJAE)</span>
+				<span class="description">Supported a running research project lead by Dr Marta Abreu, dean of the Industrial Economics department at CUJAE. The project entailed stucturing a database on information on the ICT solutions used within cuban enterprises. The project meant 3 weeks stay at CUJAE</span>
+			</li>
+			<li>
+				<span class="time">August 2012 - June 2013</span>
+				<h3>Urban planning</h3>
+				<span class="location">Lunds Universitet</span>
+				<span class="description">Completed the first ear out of a three year degree in Human Geography and Urban Planning.</span>
+			</li>
+		</ul>
+		<h2><i class="fa fa-trophy"></i> Extracurricular Activities</h2>
+		<ul>
+			<li>
+				<span class="time">May 2018 - (January 2019)</span>
+				<h3>Project Manager for TEDxKTH</h3>
+				<span class="location">Kungliga Tekniska Högskolan</span>
+				<span class="description">Responsible for the execution of the TEDxKTH event for the academic year of 2018/2019.</span>
+			</li>
+			<li>
+				<span class="time">Juni 2013 - Pågående</span>
+				<h3>Officer in the Reserves, Fire Support Specialist</h3>
+				<span class="location">Försvarsmakten</span>
+				<span class="description">Completed GMU + BFU at 2.Psk, I19, Boden. Has since been part-time employed at a mechanized armoured infantry company. During the summer of 2016 and 2017 i studied at Halmstad Military Academy tto become an Officer in the reserves. </span>
+			</li>
+			<li>
+				<span class="time">September 2014 - September 2015</span>
+				<h3>Treasurer & Board Member</h3>
+				<span class="location">Sektionen för Öppen Ingång, KTH</span>
+				<span class="description">On top of the responsibility of handling current accounts and preparing annual financial statements I initiated and completed the registration of the organisation with the Swedish Tax Authorities.</span>
+			</li>
+		</ul>
+		<h2><i class="fa fa-lightbulb-o"></i> Skills</h2>
+		<p>HTML, CSS, Javascript, SQL, Java, Python, Go</p>
+		<p>Swedish Driving License.</p>
+		<h2><i class="fa fa-globe"></i> Languages</h2>
+		<p>Speaks English and Swedish fluently. Understands Spanish on a basic level.</p>
+		<p class="info">References and course result transcripts are available on request.</p>
+	</div>
+</body>
+</html>
